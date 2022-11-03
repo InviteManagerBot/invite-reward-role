@@ -1,7 +1,7 @@
 import logging
 import asyncio
 import asyncpg
-import configs
+import configs  # type: ignore
 import click
 
 from bot import SteveBot

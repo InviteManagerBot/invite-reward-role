@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import discord
 import logging
-import configs
+import configs  # type: ignore
 
 from discord.ext import commands
 from typing import TYPE_CHECKING
@@ -63,9 +63,12 @@ class SteveBot(commands.Bot):
     async def on_command_error(
         self, ctx: GuildContext, error: commands.CommandError
     ) -> None:
-        if isinstance(error, (commands.ArgumentParsingError, commands.BadArgument)):
-            await ctx.send(str(error))
-        raise error
+        if isinstance(error, commands.BadArgument):
+            e = discord.Embed(color=discord.Color.red(), description=str(error))
+            await ctx.send(embed=e)
+        elif isinstance(error, commands.HybridCommandError):
+            original = error.original
+            raise original
 
     @property
     def config(self):

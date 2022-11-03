@@ -80,6 +80,7 @@ class Management(commands.Cog):
             await ctx.send(
                 f"No reward role has been found that rewards role {role.mention}."
             )
+            return
 
         e = discord.Embed(
             title="Done!",
