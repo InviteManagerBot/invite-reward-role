@@ -1,0 +1,16 @@
+# Bot's token
+token = ""
+
+# Bot's onwers
+owner_ids = [123, ...]
+
+# Bot configuration
+bot_status = "Listening alert invites!"
+
+# Database configuration
+postgresql_url = "postgresql://user:password@host/database"
+
+# Webhook configuration
+webhook_port = 8080
+webhook_host = "localhost"
+webhook_secret = ""

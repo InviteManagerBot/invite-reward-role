@@ -1,0 +1,2 @@
+discord.py[speed]==2.0.1
+asyncpg>=0.12.0
