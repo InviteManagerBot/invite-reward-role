@@ -1,16 +1,19 @@
 # Bot's token
 token = ""
 
-# Bot's onwers
+# Bot's owners
 owner_ids = [123, ...]
 
-# Bot configuration
+# Bot's status (It will show "Playing ...")
 bot_status = "Listening alert invites!"
 
-# Database configuration
+# Postgresql url, which should follow this format: postgresql://user:password@host/database
 postgresql_url = "postgresql://user:password@host/database"
 
-# Webhook configuration
+# HTTP Server (Webhook) Configuration
 webhook_port = 8080
 webhook_host = "localhost"
-webhook_secret = ""
+
+# Webhook secret (docs: https://docs.invite-manager.net/documentation/alert-invites#webhooks)
+# If this value is None, the bot will not verify if the webhook secret is correct or not
+webhook_secret = None

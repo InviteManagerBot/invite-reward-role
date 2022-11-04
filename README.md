@@ -41,9 +41,13 @@ The installation steps are as follows:
   type the following in the `psql` tool:
 
 ```sql
-CREATE ROLE InviteManager WITH LOGIN PASSWORD 'your@password'; -- Creating a role with a password
+CREATE ROLE InviteManager WITH LOGIN PASSWORD 'your-password'; -- Creating a role with a password
 CREATE DATABASE AlertInvitesEx OWNER InviteManager; -- Creating the database, and give the role above ownership
 ```
+
+## Setup Configuration
+
+For the configuration rename the file `configs.py.example` -> `configs.py`, and then fill in all the requested data in the file `configs.py`.
 
 ## Running
 
@@ -65,3 +69,7 @@ Linux@InvMan:~$ python3 .
 ```
 
 And... that's it. Now you should be running the bot.
+
+### Syncing Slash Commands
+
+This bot only uses slash commands, this means that to **appear the commands in all guilds** those commands will have to be synchronized with the discord API, to do the (global, i.e. all guilds) synchronization just do the following command: `@BotPing sync`
