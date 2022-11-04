@@ -65,7 +65,7 @@ def db():
 
 
 @db.command()
-def setup():
+def init():
     asyncio.run(run_db_init())
     click.secho("Setup was run in the database", fg="green")
 

@@ -37,7 +37,9 @@ class Webhook(commands.Cog):
 
     async def cog_load(self) -> None:
         self.server = WebhookServer(
-            host=self.bot.config.webhook_host, port=self.bot.config.webhook_port
+            host=self.bot.configs.webhook_host,
+            port=self.bot.configs.webhook_port,
+            secret=self.bot.configs.webhook_secret,
         )
         self.server.add_endpoint(self.on_alert_invite)
 

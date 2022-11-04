@@ -1,4 +1,4 @@
-import aiohttp
+import json
 
 from typing import TYPE_CHECKING, Callable, TypeAlias, Coroutine, Any, TypeVar
 from aiohttp import web
@@ -41,7 +41,11 @@ class WebhookServer:
             if authentication != self._secret:
                 return web.Response(status=401, text="Unauthorized")
 
-            data = await request.json()
+            try:
+                data = await request.json()
+            except json.JSONDecodeError:
+                return web.Response(status=400, text="Bad Request")
+
             await handler(data)
             return web.Response(status=200, text="OK")
 

@@ -71,5 +71,5 @@ class SteveBot(commands.Bot):
             raise original
 
     @property
-    def config(self):
+    def configs(self):
         return __import__("configs")
