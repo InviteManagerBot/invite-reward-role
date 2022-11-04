@@ -1,4 +1,4 @@
-# <div align="center">Alert Invites Example <br /> <img src="https://invite-manager.net/images/logo.png" height=25 weight=25 href="https://invite-manager.net" /></div>
+# <div align="center">Alert Invites Example <br /> <a href="https://invite-manager.net"><img src="https://invite-manager.net/images/logo.png" height=25 weight=25 /></a></div>
 
 <p align="center">
   <a href="https://invite-manager.net/invite">Invite Me</a> |
