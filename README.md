@@ -55,9 +55,9 @@ Now for the best part, running, for that we have to start by setting up the data
 To do so, do the following commands:
 
 ```sh
-C:\Windows> py . db setup
+C:\Windows> py . db init
 
-Linux@InvMan:~$ python3 . db setup
+Linux@InvMan:~$ python3 . db init
 ```
 
 Now with all the database creation done, we can start this bot, for this do the following commands:
