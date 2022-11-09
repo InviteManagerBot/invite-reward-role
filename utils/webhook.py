@@ -1,7 +1,12 @@
+from __future__ import annotations
+
 import json
 
-from typing import TYPE_CHECKING, Callable, TypeAlias, Coroutine, Any, TypeVar
+from typing import TYPE_CHECKING, Callable, Coroutine, Any, TypeVar
 from aiohttp import web
+
+if TYPE_CHECKING:
+    from typing_extensions import TypeAlias
 
 T = TypeVar("T")
 Coro: TypeAlias = Coroutine[Any, Any, T]
