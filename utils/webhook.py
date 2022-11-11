@@ -42,8 +42,8 @@ class WebhookServer:
 
     def add_endpoint(self, handler: EndpointHandler, *, path: str = "/"):
         async def _handler_wrapper(request: web.Request) -> web.StreamResponse:
-            authentication = request.headers.get("Authentication", None)
-            if authentication != self._secret:
+            authorization = request.headers.get("Authorization", None)
+            if self._secret is not None and authorization != self._secret:
                 return web.Response(status=401, text="Unauthorized")
 
             try:
