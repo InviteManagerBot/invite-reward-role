@@ -1,0 +1,15 @@
+services:
+  bot:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_PATH: /app/data/rewards.db
+    ports:
+      # Bound to localhost: expose it through a HTTPS reverse proxy (Caddy, nginx...).
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - rewards-data:/app/data
+
+volumes:
+  rewards-data:
